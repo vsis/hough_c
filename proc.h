@@ -16,33 +16,17 @@ IplImage *src, *gray, *thresholded, *perimeters;
 /* retorna PROC_ERROR o PROC_SUCCESS dependiendo si puede o no abrirla */
 int open_input_image(char * path);
 
-/* cierra el descriptor de archivo */
-void close_input_image();
+/* cierra la imagen abierta y libera memoria usada en las imagenes */
+void release_images();
 
 /* transforma la imagen a niveles de gris
- * calcula su threshold, etiqueta componentes y
- * calcula su compactness.
- * para determinar si se trata o no de un círculo */
-int proc_image(float compactness, int min_area);
+ * calcula su threshold y perímetros
+ * luego usa el método hough para detectar círculos
+ */
+void proc_image();
 
 /* detecta círculos en la imagen input, y los dibuja en output*/
 void detect_circles(IplImage *input, IplImage *output);
 
-/* obtiene el pixel x,y de la imagen */
-char get_pixel_value(IplImage *img, int x, int y);
-
-/* asigna un valor (gris) a un pixel dado */
-void set_pixel_value(IplImage *img, int x, int y, char value);
-
-/* retorna el minimo valor del vecindario de un pixel */
-char get_neighborhood_min(IplImage *img, int x, int y);
-
-/* retorna le máximo valor del vecindario de un pixel */
-char get_neighborhood_max(IplImage *img, int x, int y);
-
-/* component labelling*/
-/* etiqueta los bordes encontrados */
+/* dibuja en output los bordes encontrados en input */
 int get_perimeters(IplImage *input, IplImage *output);
-
-/* etiqueta las areas encontradas, basándose en el component labelling */
-int get_regions();

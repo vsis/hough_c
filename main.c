@@ -13,7 +13,7 @@ int main (int argc, char * argv[]){
 	if (argc == 2){
 		strcpy(path, argv[1]);
 	} else {
-		printf("número inválido de parámetros\n");
+		printf("Número inválido de parámetros\n");
 		return EXIT_FAILURE;
 	}
 	/* abrir la imagen */
@@ -23,23 +23,20 @@ int main (int argc, char * argv[]){
 		return EXIT_FAILURE;
 	}
 	/* procesar la imagen */
-	error = proc_image(0,0);
-	if (error == PROC_ERROR){
-		printf("no se pudo procesar la imagen\n");
-		return EXIT_FAILURE;
-	}
-	/* mostrar las imagenes */
-	cvNamedWindow ("imagen original", CV_WINDOW_AUTOSIZE);
-	cvShowImage ("imagen original", src);
+	proc_image(0,0);
+	/* mostrar las imagenes usadas para procesar (gray, thresholded, perimeters) */
 	cvNamedWindow ("imagen gris", CV_WINDOW_AUTOSIZE);
 	cvShowImage ("imagen gris", gray);
 	cvNamedWindow ("imagen threshold", CV_WINDOW_AUTOSIZE);
 	cvShowImage ("imagen threshold", thresholded);
-	cvNamedWindow ("perímetro", CV_WINDOW_AUTOSIZE);
-	cvShowImage ("perímetro", perimeters);
-	/* esperar para cerrar */
+	cvNamedWindow ("perímetros", CV_WINDOW_AUTOSIZE);
+	cvShowImage ("perímetros", perimeters);
+	/* mostrar la imagen original con los círculos marcados */
+	cvNamedWindow ("imagen original", CV_WINDOW_AUTOSIZE);
+	cvShowImage ("imagen original", src);
+	/* esperar a que el usuario presione una tecla para cerrar */
 	cvWaitKey(0);
-	close_input_image();
+	release_images();
 	return EXIT_SUCCESS;
 }
 
