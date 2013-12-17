@@ -1,0 +1,36 @@
+	LABORATORIO 1 DE VISIÓN POR COMPUTADOR
+
+	Universidad de Santiago de Chile
+	Departamento de Ingeniería Informática
+
+Alumno:				Roddy González G.
+Fecha de entrega:	Miércoles 18 de Diciembre de 2013
+
+Este programa resuleve el problema propuesto en el ítem 7 de enunciado
+de laboratorio.
+
+	REQUISITOS
+	
+	· Sistema operativo GNU/Linux
+	· Libería OpenCV versión 2.4.7 
+		-> asegúrese de que los archivos include están correctamente
+		ubicados en /usr/include/opencv
+	· Herramientas básicas de compilación
+		-> make y gcc principalmente
+		
+		
+	COMPILACIÓN
+	
+Estando en la carpeta de los archivos fuente ejecute:
+	$ make
+	
+	
+	EJECUCIÓN
+
+Una vez compilado, ejecute el programa con la siguiente instrucción:
+	$ ./lab1 ${ruta_de_la_imagen}
+
+Puede usar una de las imágenes de prueba que viene con el programa, por
+ejemplo:
+	$ ./lab1 imgs/test.jpg
+	
