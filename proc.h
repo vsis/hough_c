@@ -9,6 +9,7 @@
 /* src: la imagen original
  * gray: la imagen en escala de grises
  * thresholded: la imagen luego de aplicar threshold
+ * perimeters: los per{imetros calculados desde thresholded
  */
 IplImage *src, *gray, *thresholded, *perimeters;
  

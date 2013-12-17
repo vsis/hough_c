@@ -67,6 +67,6 @@ void detect_circles(IplImage *input, IplImage *output){
 	for (i = 0; i < circles->total; i++){
 			float * p = (float *) cvGetSeqElem(circles, i);
 			cvCircle(output, cvPoint(cvRound(p[0]),cvRound(p[1])), cvRound(p[2]), CV_RGB(255,0,0), 10, 8, 0);
-			printf ("\tcirculo en %.1f , %.1f\n", p[1], p[2]);
+			printf ("\tcírculo en %.1f , %.1f\n", p[0], p[1]);
 	}
 }

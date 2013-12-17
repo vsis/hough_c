@@ -23,7 +23,7 @@ int main (int argc, char * argv[]){
 		return EXIT_FAILURE;
 	}
 	/* procesar la imagen */
-	proc_image(0,0);
+	proc_image();
 	/* mostrar las imagenes usadas para procesar (gray, thresholded, perimeters) */
 	cvNamedWindow ("imagen gris", CV_WINDOW_AUTOSIZE);
 	cvShowImage ("imagen gris", gray);
